@@ -1,0 +1,8 @@
+
+function start()
+        self:GetComponent("Button").onClick:AddListener(function()
+        word1:GetComponent("Text").text = "Hello World~~"
+    end)
+end
+
+

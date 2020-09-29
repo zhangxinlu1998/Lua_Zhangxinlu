@@ -1,0 +1,21 @@
+local speed = 10
+
+print("Start Moving")
+
+
+Set = function(self)
+    move = self
+end
+
+Update = function()
+
+    move.transform:Rotate(CS.UnityEngine.Vector3.up * 30 * CS.UnityEngine.Time.deltaTime);
+    move.transform:Rotate(CS.UnityEngine.Vector3.forward * 30 * CS.UnityEngine.Time.deltaTime);
+    move.transform:Rotate(CS.UnityEngine.Vector3.right * 30 * CS.UnityEngine.Time.deltaTime);
+
+    v = CS.UnityEngine.Input.GetAxis("Vertical")*speed;
+    h = CS.UnityEngine.Input.GetAxis("Horizontal")*speed;
+
+    move.transform:Translate(CS.UnityEngine.Vector3(h,0,v) * CS.UnityEngine.Time.deltaTime);
+
+end
